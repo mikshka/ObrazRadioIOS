@@ -19,7 +19,12 @@
 @property (strong, nonatomic) AVPlayerItem *playerItem;
 @property (strong, nonatomic) AVPlayer *player;
 
+@property(nonatomic) bool isPlaying;
+
 - (IBAction)play;
++ (NSMutableDictionary *)jsonRequestWithURL:(NSString *)url;
+- (void)simpleJsonParsing;
+
 
 @end
 
