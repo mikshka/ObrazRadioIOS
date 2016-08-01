@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3455F3911D4FCADE00B2A980 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455F3901D4FCADE00B2A980 /* main.m */; };
+		3455F3941D4FCADE00B2A980 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455F3931D4FCADE00B2A980 /* AppDelegate.m */; };
+		3455F3971D4FCADE00B2A980 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455F3961D4FCADE00B2A980 /* ViewController.m */; };
+		3455F39A1D4FCADE00B2A980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3455F3981D4FCADE00B2A980 /* Main.storyboard */; };
+		3455F39C1D4FCADE00B2A980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3455F39B1D4FCADE00B2A980 /* Assets.xcassets */; };
+		3455F39F1D4FCADE00B2A980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3455F39D1D4FCADE00B2A980 /* LaunchScreen.storyboard */; };
+		3455F3AA1D4FCADE00B2A980 /* ObrazRadioIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455F3A91D4FCADE00B2A980 /* ObrazRadioIOSTests.m */; };
+		3455F3B51D4FCADE00B2A980 /* ObrazRadioIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455F3B41D4FCADE00B2A980 /* ObrazRadioIOSUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3455F3A61D4FCADE00B2A980 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3455F3841D4FCADD00B2A980 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3455F38B1D4FCADD00B2A980;
+			remoteInfo = ObrazRadioIOS;
+		};
+		3455F3B11D4FCADE00B2A980 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3455F3841D4FCADD00B2A980 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3455F38B1D4FCADD00B2A980;
+			remoteInfo = ObrazRadioIOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3455F38C1D4FCADD00B2A980 /* ObrazRadioIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObrazRadioIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3455F3901D4FCADE00B2A980 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3455F3921D4FCADE00B2A980 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3455F3931D4FCADE00B2A980 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3455F3951D4FCADE00B2A980 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3455F3961D4FCADE00B2A980 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3455F3991D4FCADE00B2A980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3455F39B1D4FCADE00B2A980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3455F39E1D4FCADE00B2A980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3455F3A01D4FCADE00B2A980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3455F3A51D4FCADE00B2A980 /* ObrazRadioIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObrazRadioIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3455F3A91D4FCADE00B2A980 /* ObrazRadioIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObrazRadioIOSTests.m; sourceTree = "<group>"; };
+		3455F3AB1D4FCADE00B2A980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3455F3B01D4FCADE00B2A980 /* ObrazRadioIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObrazRadioIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3455F3B41D4FCADE00B2A980 /* ObrazRadioIOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObrazRadioIOSUITests.m; sourceTree = "<group>"; };
+		3455F3B61D4FCADE00B2A980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3455F3891D4FCADD00B2A980 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3455F3A21D4FCADE00B2A980 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3455F3AD1D4FCADE00B2A980 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3455F3831D4FCADD00B2A980 = {
+			isa = PBXGroup;
+			children = (
+				3455F38E1D4FCADE00B2A980 /* ObrazRadioIOS */,
+				3455F3A81D4FCADE00B2A980 /* ObrazRadioIOSTests */,
+				3455F3B31D4FCADE00B2A980 /* ObrazRadioIOSUITests */,
+				3455F38D1D4FCADD00B2A980 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3455F38D1D4FCADD00B2A980 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3455F38C1D4FCADD00B2A980 /* ObrazRadioIOS.app */,
+				3455F3A51D4FCADE00B2A980 /* ObrazRadioIOSTests.xctest */,
+				3455F3B01D4FCADE00B2A980 /* ObrazRadioIOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3455F38E1D4FCADE00B2A980 /* ObrazRadioIOS */ = {
+			isa = PBXGroup;
+			children = (
+				3455F3921D4FCADE00B2A980 /* AppDelegate.h */,
+				3455F3931D4FCADE00B2A980 /* AppDelegate.m */,
+				3455F3951D4FCADE00B2A980 /* ViewController.h */,
+				3455F3961D4FCADE00B2A980 /* ViewController.m */,
+				3455F3981D4FCADE00B2A980 /* Main.storyboard */,
+				3455F39B1D4FCADE00B2A980 /* Assets.xcassets */,
+				3455F39D1D4FCADE00B2A980 /* LaunchScreen.storyboard */,
+				3455F3A01D4FCADE00B2A980 /* Info.plist */,
+				3455F38F1D4FCADE00B2A980 /* Supporting Files */,
+			);
+			path = ObrazRadioIOS;
+			sourceTree = "<group>";
+		};
+		3455F38F1D4FCADE00B2A980 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3455F3901D4FCADE00B2A980 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3455F3A81D4FCADE00B2A980 /* ObrazRadioIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				3455F3A91D4FCADE00B2A980 /* ObrazRadioIOSTests.m */,
+				3455F3AB1D4FCADE00B2A980 /* Info.plist */,
+			);
+			path = ObrazRadioIOSTests;
+			sourceTree = "<group>";
+		};
+		3455F3B31D4FCADE00B2A980 /* ObrazRadioIOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3455F3B41D4FCADE00B2A980 /* ObrazRadioIOSUITests.m */,
+				3455F3B61D4FCADE00B2A980 /* Info.plist */,
+			);
+			path = ObrazRadioIOSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3455F38B1D4FCADD00B2A980 /* ObrazRadioIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3455F3B91D4FCADE00B2A980 /* Build configuration list for PBXNativeTarget "ObrazRadioIOS" */;
+			buildPhases = (
+				3455F3881D4FCADD00B2A980 /* Sources */,
+				3455F3891D4FCADD00B2A980 /* Frameworks */,
+				3455F38A1D4FCADD00B2A980 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObrazRadioIOS;
+			productName = ObrazRadioIOS;
+			productReference = 3455F38C1D4FCADD00B2A980 /* ObrazRadioIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3455F3A41D4FCADE00B2A980 /* ObrazRadioIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3455F3BC1D4FCADE00B2A980 /* Build configuration list for PBXNativeTarget "ObrazRadioIOSTests" */;
+			buildPhases = (
+				3455F3A11D4FCADE00B2A980 /* Sources */,
+				3455F3A21D4FCADE00B2A980 /* Frameworks */,
+				3455F3A31D4FCADE00B2A980 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3455F3A71D4FCADE00B2A980 /* PBXTargetDependency */,
+			);
+			name = ObrazRadioIOSTests;
+			productName = ObrazRadioIOSTests;
+			productReference = 3455F3A51D4FCADE00B2A980 /* ObrazRadioIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3455F3AF1D4FCADE00B2A980 /* ObrazRadioIOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3455F3BF1D4FCADE00B2A980 /* Build configuration list for PBXNativeTarget "ObrazRadioIOSUITests" */;
+			buildPhases = (
+				3455F3AC1D4FCADE00B2A980 /* Sources */,
+				3455F3AD1D4FCADE00B2A980 /* Frameworks */,
+				3455F3AE1D4FCADE00B2A980 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3455F3B21D4FCADE00B2A980 /* PBXTargetDependency */,
+			);
+			name = ObrazRadioIOSUITests;
+			productName = ObrazRadioIOSUITests;
+			productReference = 3455F3B01D4FCADE00B2A980 /* ObrazRadioIOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3455F3841D4FCADD00B2A980 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Михаил Коршунов";
+				TargetAttributes = {
+					3455F38B1D4FCADD00B2A980 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 6BBC5VPET2;
+					};
+					3455F3A41D4FCADE00B2A980 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 3455F38B1D4FCADD00B2A980;
+					};
+					3455F3AF1D4FCADE00B2A980 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 3455F38B1D4FCADD00B2A980;
+					};
+				};
+			};
+			buildConfigurationList = 3455F3871D4FCADD00B2A980 /* Build configuration list for PBXProject "ObrazRadioIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3455F3831D4FCADD00B2A980;
+			productRefGroup = 3455F38D1D4FCADD00B2A980 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3455F38B1D4FCADD00B2A980 /* ObrazRadioIOS */,
+				3455F3A41D4FCADE00B2A980 /* ObrazRadioIOSTests */,
+				3455F3AF1D4FCADE00B2A980 /* ObrazRadioIOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3455F38A1D4FCADD00B2A980 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3455F39F1D4FCADE00B2A980 /* LaunchScreen.storyboard in Resources */,
+				3455F39C1D4FCADE00B2A980 /* Assets.xcassets in Resources */,
+				3455F39A1D4FCADE00B2A980 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3455F3A31D4FCADE00B2A980 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3455F3AE1D4FCADE00B2A980 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3455F3881D4FCADD00B2A980 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3455F3971D4FCADE00B2A980 /* ViewController.m in Sources */,
+				3455F3941D4FCADE00B2A980 /* AppDelegate.m in Sources */,
+				3455F3911D4FCADE00B2A980 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3455F3A11D4FCADE00B2A980 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3455F3AA1D4FCADE00B2A980 /* ObrazRadioIOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3455F3AC1D4FCADE00B2A980 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3455F3B51D4FCADE00B2A980 /* ObrazRadioIOSUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3455F3A71D4FCADE00B2A980 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3455F38B1D4FCADD00B2A980 /* ObrazRadioIOS */;
+			targetProxy = 3455F3A61D4FCADE00B2A980 /* PBXContainerItemProxy */;
+		};
+		3455F3B21D4FCADE00B2A980 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3455F38B1D4FCADD00B2A980 /* ObrazRadioIOS */;
+			targetProxy = 3455F3B11D4FCADE00B2A980 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3455F3981D4FCADE00B2A980 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3455F3991D4FCADE00B2A980 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3455F39D1D4FCADE00B2A980 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3455F39E1D4FCADE00B2A980 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3455F3B71D4FCADE00B2A980 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3455F3B81D4FCADE00B2A980 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3455F3BA1D4FCADE00B2A980 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ObrazRadioIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ursus.ObrazRadioIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3455F3BB1D4FCADE00B2A980 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ObrazRadioIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ursus.ObrazRadioIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3455F3BD1D4FCADE00B2A980 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ObrazRadioIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ursus.ObrazRadioIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ObrazRadioIOS.app/ObrazRadioIOS";
+			};
+			name = Debug;
+		};
+		3455F3BE1D4FCADE00B2A980 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ObrazRadioIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ursus.ObrazRadioIOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ObrazRadioIOS.app/ObrazRadioIOS";
+			};
+			name = Release;
+		};
+		3455F3C01D4FCADE00B2A980 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ObrazRadioIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ursus.ObrazRadioIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ObrazRadioIOS;
+			};
+			name = Debug;
+		};
+		3455F3C11D4FCADE00B2A980 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ObrazRadioIOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ursus.ObrazRadioIOSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ObrazRadioIOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3455F3871D4FCADD00B2A980 /* Build configuration list for PBXProject "ObrazRadioIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3455F3B71D4FCADE00B2A980 /* Debug */,
+				3455F3B81D4FCADE00B2A980 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3455F3B91D4FCADE00B2A980 /* Build configuration list for PBXNativeTarget "ObrazRadioIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3455F3BA1D4FCADE00B2A980 /* Debug */,
+				3455F3BB1D4FCADE00B2A980 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3455F3BC1D4FCADE00B2A980 /* Build configuration list for PBXNativeTarget "ObrazRadioIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3455F3BD1D4FCADE00B2A980 /* Debug */,
+				3455F3BE1D4FCADE00B2A980 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3455F3BF1D4FCADE00B2A980 /* Build configuration list for PBXNativeTarget "ObrazRadioIOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3455F3C01D4FCADE00B2A980 /* Debug */,
+				3455F3C11D4FCADE00B2A980 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3455F3841D4FCADD00B2A980 /* Project object */;
+}
