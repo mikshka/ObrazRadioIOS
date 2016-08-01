@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVAudioPlayer.h>
+#include <AudioToolbox/AudioToolbox.h>
+#include <AudioToolbox/AudioFileStream.h>
+#include <AudioToolbox/AudioServices.h>
+#import <AVFoundation/AVFoundation.h>
+
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) AVPlayerItem *playerItem;
+@property (strong, nonatomic) AVPlayer *player;
+
+- (IBAction)play;
 
 @end
 
