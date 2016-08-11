@@ -505,6 +505,7 @@
 				3455F3BB1D4FCADE00B2A980 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3455F3BC1D4FCADE00B2A980 /* Build configuration list for PBXNativeTarget "ObrazRadioIOSTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +514,7 @@
 				3455F3BE1D4FCADE00B2A980 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3455F3BF1D4FCADE00B2A980 /* Build configuration list for PBXNativeTarget "ObrazRadioIOSUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +523,7 @@
 				3455F3C11D4FCADE00B2A980 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

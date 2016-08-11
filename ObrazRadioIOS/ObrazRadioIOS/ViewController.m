@@ -12,6 +12,7 @@
 #include <AudioToolbox/AudioFileStream.h>
 #include <AudioToolbox/AudioServices.h>
 #import <AVFoundation/AVFoundation.h>
+//#import "Program.h"
 
 @interface ViewController ()
 
@@ -31,7 +32,7 @@
     self.player = [AVPlayer playerWithPlayerItem: self.playerItem];
     self.player = [AVPlayer playerWithURL:url];
     
-    [self simpleJsonParsing];
+    [self parseJson];
     
     
 }
@@ -76,24 +77,52 @@
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:url];
     NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
     
-    //-- JSON Parsing
-    NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
-    NSLog(@"Result = %@",result);
-    
-    for (NSMutableDictionary *dic in result)
-    {
-        NSString *string = dic[@"array"];
-        if (string)
+    if (response != nil) {
+        //-- JSON Parsing
+        NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
+        NSLog(@"Result = %@",result);
+        
+        for (NSMutableDictionary *dic in result)
         {
-            NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
-            dic[@"array"] = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        }
-        else
-        {
-            NSLog(@"Error in url response");
+            NSString *pDate = dic[@"docdate"];
+            NSString *hours = dic[@"hours"];
+            NSString *minutes = dic[@"minutes"];
+            NSString *programName = dic[@"programname"];
+            
+            NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+            [dateFormat setDateFormat:@"yyyy-LL-dd' 'HH:mm:ss"];
+            [dateFormat setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+            NSDate *date = [dateFormat dateFromString:pDate];
+            //2016-08-11 00:00:02
+            
+            //Program *curProgram = [[Program alloc] init];
+           // curProgram.programDate = date;
+            
+            
+            if (pDate)
+            {
+                //NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+                //dic[@"array"] = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            }
+            else
+            {
+                NSLog(@"Error in url response");
+            }
         }
     }
     
+}
+-(void)parseJson
+{
+    // create a dispatch queue, first argument is a C string (note no "@"), second is always NULL
+    dispatch_queue_t jsonParsingQueue = dispatch_queue_create("jsonParsingQueue", NULL);
+    
+    // execute a task on that queue asynchronously
+    dispatch_async(jsonParsingQueue, ^{
+        [self simpleJsonParsing];
+        
+    });
+
 }
 
 @end

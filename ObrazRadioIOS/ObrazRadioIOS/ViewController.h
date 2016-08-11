@@ -24,6 +24,7 @@
 - (IBAction)play;
 + (NSMutableDictionary *)jsonRequestWithURL:(NSString *)url;
 - (void)simpleJsonParsing;
+- (void) parseJson;
 
 
 @end
