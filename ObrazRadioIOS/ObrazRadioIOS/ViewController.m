@@ -12,7 +12,7 @@
 #include <AudioToolbox/AudioFileStream.h>
 #include <AudioToolbox/AudioServices.h>
 #import <AVFoundation/AVFoundation.h>
-//#import "Program.h"
+#import "Program.h"
 
 @interface ViewController ()
 
@@ -80,7 +80,9 @@
     if (response != nil) {
         //-- JSON Parsing
         NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"Result = %@",result);
+        //NSLog(@"Result = %@",result);
+        
+        NSMutableArray *programs = [NSMutableArray array];
         
         for (NSMutableDictionary *dic in result)
         {
@@ -94,9 +96,16 @@
             [dateFormat setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
             NSDate *date = [dateFormat dateFromString:pDate];
             //2016-08-11 00:00:02
+
             
-            //Program *curProgram = [[Program alloc] init];
-           // curProgram.programDate = date;
+            
+            Program *curProgram = [[Program alloc] init];
+            curProgram.programDate = date;
+            curProgram.programName = programName;
+            curProgram.hours = [hours intValue];
+            curProgram.minutes = [minutes intValue];
+            
+            [programs addObject:curProgram];
             
             
             if (pDate)
@@ -108,8 +117,10 @@
             {
                 NSLog(@"Error in url response");
             }
+            
         }
-    }
+               
+      }
     
 }
 -(void)parseJson

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344B73A41D5D83D600C8D952 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = 344B73A31D5D83D600C8D952 /* Program.m */; };
+		344B73A71D5D968200C8D952 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 344B73A61D5D968200C8D952 /* DBManager.m */; };
 		3455F3911D4FCADE00B2A980 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455F3901D4FCADE00B2A980 /* main.m */; };
 		3455F3941D4FCADE00B2A980 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455F3931D4FCADE00B2A980 /* AppDelegate.m */; };
 		3455F3971D4FCADE00B2A980 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455F3961D4FCADE00B2A980 /* ViewController.m */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		344B73A21D5D83C100C8D952 /* Program.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		344B73A31D5D83D600C8D952 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
+		344B73A51D5D965E00C8D952 /* DBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		344B73A61D5D968200C8D952 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		3455F38C1D4FCADD00B2A980 /* ObrazRadioIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObrazRadioIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3455F3901D4FCADE00B2A980 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3455F3921D4FCADE00B2A980 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +116,10 @@
 				3455F39D1D4FCADE00B2A980 /* LaunchScreen.storyboard */,
 				3455F3A01D4FCADE00B2A980 /* Info.plist */,
 				3455F38F1D4FCADE00B2A980 /* Supporting Files */,
+				344B73A21D5D83C100C8D952 /* Program.h */,
+				344B73A31D5D83D600C8D952 /* Program.m */,
+				344B73A51D5D965E00C8D952 /* DBManager.h */,
+				344B73A61D5D968200C8D952 /* DBManager.m */,
 			);
 			path = ObrazRadioIOS;
 			sourceTree = "<group>";
@@ -271,9 +281,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				344B73A41D5D83D600C8D952 /* Program.m in Sources */,
 				3455F3971D4FCADE00B2A980 /* ViewController.m in Sources */,
 				3455F3941D4FCADE00B2A980 /* AppDelegate.m in Sources */,
 				3455F3911D4FCADE00B2A980 /* main.m in Sources */,
+				344B73A71D5D968200C8D952 /* DBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
