@@ -104,6 +104,7 @@
             curProgram.programName = programName;
             curProgram.hours = [hours intValue];
             curProgram.minutes = [minutes intValue];
+            curProgram.programTime = [NSString stringWithFormat:@"%d:%d", curProgram.hours, curProgram.minutes];
             
             [programs addObject:curProgram];
             

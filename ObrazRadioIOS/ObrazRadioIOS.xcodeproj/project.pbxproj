@@ -17,6 +17,7 @@
 		3455F39F1D4FCADE00B2A980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3455F39D1D4FCADE00B2A980 /* LaunchScreen.storyboard */; };
 		3455F3AA1D4FCADE00B2A980 /* ObrazRadioIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455F3A91D4FCADE00B2A980 /* ObrazRadioIOSTests.m */; };
 		3455F3B51D4FCADE00B2A980 /* ObrazRadioIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455F3B41D4FCADE00B2A980 /* ObrazRadioIOSUITests.m */; };
+		34FB22F81D61757B0089B330 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FB22F71D61757B0089B330 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		3455F3B01D4FCADE00B2A980 /* ObrazRadioIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ObrazRadioIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3455F3B41D4FCADE00B2A980 /* ObrazRadioIOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObrazRadioIOSUITests.m; sourceTree = "<group>"; };
 		3455F3B61D4FCADE00B2A980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34FB22F71D61757B0089B330 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34FB22F81D61757B0089B330 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +90,7 @@
 		3455F3831D4FCADD00B2A980 = {
 			isa = PBXGroup;
 			children = (
+				34FB22F71D61757B0089B330 /* libsqlite3.tbd */,
 				3455F38E1D4FCADE00B2A980 /* ObrazRadioIOS */,
 				3455F3A81D4FCADE00B2A980 /* ObrazRadioIOSTests */,
 				3455F3B31D4FCADE00B2A980 /* ObrazRadioIOSUITests */,

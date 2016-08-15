@@ -13,5 +13,6 @@
 @property (nonatomic, assign) int hours;
 @property (nonatomic, assign) int minutes;
 @property (strong, nonatomic) NSString *programName;
+@property (strong, nonatomic) NSString *programTime;
 
 @end

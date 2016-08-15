@@ -16,6 +16,7 @@
 +(DBManager*)getSharedInstance;
 -(BOOL)createDB;
 -(BOOL)saveData:(NSString*)programName programTime:(NSString*)programTime;
--(NSArray*) findByRegisterNumber:(NSString*)registerNumber;
+-(NSArray*) getTodayProgram;
+-(BOOL)clearDB;
 
 @end
