@@ -18,5 +18,6 @@
 -(BOOL)saveData:(NSString*)programName programTime:(NSString*)programTime;
 -(NSArray*) getTodayProgram;
 -(BOOL)clearDB;
+-(NSDate*)getProgramDate;
 
 @end

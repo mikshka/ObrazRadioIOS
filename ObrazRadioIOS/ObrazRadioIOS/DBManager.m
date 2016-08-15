@@ -76,6 +76,8 @@ static sqlite3_stmt *statement = nil;
           return NO;
         }
         
+    } else {
+        sqlite3_close(database);
     }
     return NO;
 }
@@ -90,7 +92,7 @@ static sqlite3_stmt *statement = nil;
         NSMutableArray *resultArray = [[NSMutableArray alloc]init];
         if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK)
         {
-            if (sqlite3_step(statement) == SQLITE_ROW)
+            while (sqlite3_step(statement) == SQLITE_ROW)
             {
                 NSDate* today = [NSDate date];
                 
@@ -106,13 +108,12 @@ static sqlite3_stmt *statement = nil;
                 
                 [programs addObject:curProgram];
                 
-                return resultArray;
             }
-            else{
-                NSLog(@"Not found");
-                return nil;
-            }
+            return resultArray;
+            
         }
+    } else {
+        sqlite3_close(database);
     }
     return nil;
 }
@@ -132,8 +133,32 @@ static sqlite3_stmt *statement = nil;
             return NO;
         }
         
+    } else {
+        sqlite3_close(database);
     }
     return NO;
+}
+-(NSDate*)getProgramDate;
+{
+    NSString *querySQL = @"SELECT strftime('%Y-%m-%d', sc_date) FROM schedule where sc_date = date('now')";
+    const char *query_stmt = [querySQL UTF8String];
+    
+    if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+    {
+        if (sqlite3_step(statement) == SQLITE_ROW)
+        {
+            //NSDate* today = [NSDate date];
+            
+            NSString *programDateText = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateFormat: @"yyyy-MM-dd"];
+            NSDate *programDate = [dateFormatter dateFromString:programDateText];
+            return programDate;
+        }
+    } else {
+        sqlite3_close(database);
+    }
+    return nil;
 }
 
 @end
