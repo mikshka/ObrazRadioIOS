@@ -60,20 +60,26 @@ static sqlite3_stmt *statement = nil;
     return isSuccess;
 }
 
--(BOOL)saveData:(NSString*)programName programTime:(NSString*)programTime;
+-saveData:(NSArray*)program;
 {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
         
-        NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO schedule(sc_date, programName, programTime) VALUES (date('now'), \"%@\", \"%@\")", programName, programTime];
-        const char *insert_stmt = [insertSQL UTF8String];
-        sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
-        if (sqlite3_step(statement) == SQLITE_DONE)
-        {
-            return YES;
-        } else {
-          return NO;
+        for(int i = 0; i < [program count]; i++) {
+            Program *p = [program objectAtIndex:i];
+            //NSString *sqlInsert = @"insert into myTable (_id, name, area, title, description, url) VALUES (?, ?, ?, ?, ?, ?)";
+            NSString *insertSQL = @"INSERT INTO schedule(sc_date, programName, programTime) VALUES (date('now'), ?, ?)";
+            
+            //NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO schedule(sc_date, programName, programTime) VALUES (date('now'), \"%@\", \"%@\")", [p programName], [p programTime]];
+            const char *insert_stmt = [insertSQL UTF8String];
+            sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
+            sqlite3_bind_text(statement, 0, [p.programName UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(statement, 1, [p.programTime UTF8String], -1, SQLITE_TRANSIENT);
+            
+            if (sqlite3_step(statement) != SQLITE_DONE) {
+                NSLog(@"Failed to add record pName=%@ pTime%@",[p programName], [p programTime]);
+            }
         }
         
     } else {
@@ -82,7 +88,7 @@ static sqlite3_stmt *statement = nil;
     return NO;
 }
 
-- (NSArray*) getTodayProgram
+- (NSMutableArray*) getTodayProgram
 {
     const char *dbpath = [databasePath UTF8String];
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
@@ -145,7 +151,8 @@ static sqlite3_stmt *statement = nil;
     
     if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK)
     {
-        if (sqlite3_step(statement) == SQLITE_ROW)
+        int sqlite_code = sqlite3_step(statement);
+        if (sqlite_code == SQLITE_DONE)
         {
             //NSDate* today = [NSDate date];
             

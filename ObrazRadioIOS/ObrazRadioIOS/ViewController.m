@@ -27,12 +27,13 @@
     
     NSURL *url = [NSURL URLWithString:@"http://213.177.106.78:8002"];
     NSURL *scheduleUrl = [NSURL URLWithString:@"http://obrazschedule.ru/schedule/?action=get_schedule"];
+    self.programs = [NSMutableArray array];
     
     self.playerItem = [AVPlayerItem playerItemWithURL:url];
     self.player = [AVPlayer playerWithPlayerItem: self.playerItem];
     self.player = [AVPlayer playerWithURL:url];
     
-    [self parseJson];
+    [self loadTodayProgram];
     
     
 }
@@ -82,7 +83,7 @@
         NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
         //NSLog(@"Result = %@",result);
         
-        NSMutableArray *programs = [NSMutableArray array];
+        
         
         for (NSMutableDictionary *dic in result)
         {
@@ -106,7 +107,7 @@
             curProgram.minutes = [minutes intValue];
             curProgram.programTime = [NSString stringWithFormat:@"%d:%d", curProgram.hours, curProgram.minutes];
             
-            [programs addObject:curProgram];
+            [self.programs addObject:curProgram];
             
             
             if (pDate)
@@ -120,6 +121,7 @@
             }
             
         }
+        [[DBManager getSharedInstance]saveData: self.programs];
                
       }
     
@@ -135,6 +137,20 @@
         
     });
 
+}
+- (void) loadTodayProgram {
+    [[DBManager getSharedInstance] clearDB];
+    [self parseJson];
+    
+    NSDate *dbDate = [[DBManager getSharedInstance]getProgramDate];
+    NSDate *now = [NSDate date];
+    
+    if ([dbDate compare:now] == NSOrderedSame) {
+       self.programs = [[DBManager getSharedInstance] getTodayProgram];
+    } else {
+      [[DBManager getSharedInstance] clearDB];
+      [self parseJson];
+    }
 }
 
 @end

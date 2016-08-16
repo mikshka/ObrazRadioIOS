@@ -12,12 +12,13 @@
 #include <AudioToolbox/AudioFileStream.h>
 #include <AudioToolbox/AudioServices.h>
 #import <AVFoundation/AVFoundation.h>
-
+#import "DBManager.h"
 
 @interface ViewController : UIViewController
 
 @property (strong, nonatomic) AVPlayerItem *playerItem;
 @property (strong, nonatomic) AVPlayer *player;
+@property (strong, nonatomic) NSMutableArray *programs;
 
 @property(nonatomic) bool isPlaying;
 
@@ -25,7 +26,7 @@
 + (NSMutableDictionary *)jsonRequestWithURL:(NSString *)url;
 - (void)simpleJsonParsing;
 - (void) parseJson;
-
+- (void) loadTodayProgram;
 
 @end
 
