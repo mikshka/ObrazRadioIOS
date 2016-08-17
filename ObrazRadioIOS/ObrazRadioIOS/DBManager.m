@@ -74,15 +74,17 @@ static sqlite3_stmt *statement = nil;
             //NSString *insertSQL = [NSString stringWithFormat:@"INSERT INTO schedule(sc_date, programName, programTime) VALUES (date('now'), \"%@\", \"%@\")", [p programName], [p programTime]];
             const char *insert_stmt = [insertSQL UTF8String];
             sqlite3_prepare_v2(database, insert_stmt,-1, &statement, NULL);
-            sqlite3_bind_text(statement, 0, [p.programName UTF8String], -1, SQLITE_TRANSIENT);
-            sqlite3_bind_text(statement, 1, [p.programTime UTF8String], -1, SQLITE_TRANSIENT);
-            
-            if (sqlite3_step(statement) != SQLITE_DONE) {
+            sqlite3_bind_text(statement, 1, [p.programName UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text(statement, 2, [p.programTime UTF8String], -1, SQLITE_TRANSIENT);
+            int res = sqlite3_step(statement);
+            if (res != SQLITE_DONE) {
                 NSLog(@"Failed to add record pName=%@ pTime%@",[p programName], [p programTime]);
             }
         }
-        
+        sqlite3_finalize(statement);
+        sqlite3_close(database);
     } else {
+        sqlite3_finalize(statement);
         sqlite3_close(database);
     }
     return NO;
@@ -115,6 +117,8 @@ static sqlite3_stmt *statement = nil;
                 [programs addObject:curProgram];
                 
             }
+            sqlite3_finalize(statement);
+            sqlite3_close(database);
             return resultArray;
             
         }
@@ -132,10 +136,15 @@ static sqlite3_stmt *statement = nil;
         NSString *deleteSQL = @"DELETE FROM schedule";
         const char *delete_stmt = [deleteSQL UTF8String];
         sqlite3_prepare_v2(database, delete_stmt,-1, &statement, NULL);
-        if (sqlite3_step(statement) == SQLITE_DONE)
+        int res = sqlite3_step(statement);
+        if (res == SQLITE_DONE)
         {
+            sqlite3_finalize(statement);
+            sqlite3_close(database);
             return YES;
         } else {
+            sqlite3_finalize(statement);
+            sqlite3_close(database);
             return NO;
         }
         
@@ -146,23 +155,35 @@ static sqlite3_stmt *statement = nil;
 }
 -(NSDate*)getProgramDate;
 {
-    NSString *querySQL = @"SELECT strftime('%Y-%m-%d', sc_date) FROM schedule where sc_date = date('now')";
-    const char *query_stmt = [querySQL UTF8String];
-    
-    if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK)
+    const char *dbpath = [databasePath UTF8String];
+    if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        int sqlite_code = sqlite3_step(statement);
-        if (sqlite_code == SQLITE_DONE)
+        //NSString *querySQL = @"SELECT distinct strftime('%Y-%m-%d', sc_date) FROM schedule where sc_date = date('now')";
+        NSString *querySQL = @"SELECT distinct sc_date FROM schedule";
+        const char *query_stmt = [querySQL UTF8String];
+        int res = sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL);
+        if (res == SQLITE_OK)
         {
-            //NSDate* today = [NSDate date];
+            int sqlite_code = sqlite3_step(statement);
             
-            NSString *programDateText = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, 0)];
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat: @"yyyy-MM-dd"];
-            NSDate *programDate = [dateFormatter dateFromString:programDateText];
-            return programDate;
+            //if (sqlite_code == SQLITE_DONE)
+            if (sqlite_code == SQLITE_ROW)
+            {
+                //NSDate* today = [NSDate date];
+                NSString* programDateText=[NSString stringWithFormat:@"%s",(const char*)sqlite3_column_text(statement, 0)];
+                NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+                [dateFormat setDateFormat:@"yyyy-LL-dd"];
+                [dateFormat setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+                NSDate *programDate = [dateFormat dateFromString:programDateText];
+                
+                sqlite3_finalize(statement);
+                sqlite3_close(database);
+                
+                return programDate;
+            }
         }
     } else {
+        sqlite3_finalize(statement);
         sqlite3_close(database);
     }
     return nil;

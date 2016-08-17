@@ -96,6 +96,7 @@
             [dateFormat setDateFormat:@"yyyy-LL-dd' 'HH:mm:ss"];
             [dateFormat setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
             NSDate *date = [dateFormat dateFromString:pDate];
+    
             //2016-08-11 00:00:02
 
             
@@ -139,18 +140,31 @@
 
 }
 - (void) loadTodayProgram {
-    [[DBManager getSharedInstance] clearDB];
-    [self parseJson];
+    //[[DBManager getSharedInstance] clearDB];
+    //[self parseJson];
+   
     
     NSDate *dbDate = [[DBManager getSharedInstance]getProgramDate];
     NSDate *now = [NSDate date];
     
-    if ([dbDate compare:now] == NSOrderedSame) {
+    unsigned int flags = NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit;
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    
+    NSDateComponents* componentsdb = [calendar components:flags fromDate:dbDate];
+    NSDateComponents* componentsnow = [calendar components:flags fromDate:now];
+    
+    
+    NSDate* db = [calendar dateFromComponents:componentsdb];
+    NSDate* n = [calendar dateFromComponents:componentsnow];
+    
+    
+    if (db != nil && [db compare:n] == NSOrderedSame) {
        self.programs = [[DBManager getSharedInstance] getTodayProgram];
     } else {
       [[DBManager getSharedInstance] clearDB];
       [self parseJson];
     }
+    
 }
 
 @end
