@@ -22,6 +22,7 @@
 
 @property(nonatomic) bool isPlaying;
 
+- (void)myTimerCallback:(NSTimer*)timer;
 - (IBAction)play;
 + (NSMutableDictionary *)jsonRequestWithURL:(NSString *)url;
 - (void)simpleJsonParsing;

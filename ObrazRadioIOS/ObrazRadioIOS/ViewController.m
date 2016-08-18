@@ -35,7 +35,21 @@
     
     [self loadTodayProgram];
     
+    SEL mySelector = @selector(myTimerCallback:);
+    NSTimer* timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:mySelector userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     
+    
+}
+
+-(void)myTimerCallback:(NSTimer*)timer
+{
+    NSDate *date = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
+    NSInteger hour = [components hour];
+    NSInteger minute = [components minute];
+    NSLog(@"Yes!!!");
 }
 
 - (void)didReceiveMemoryWarning {
