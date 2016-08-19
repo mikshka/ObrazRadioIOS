@@ -24,8 +24,14 @@
                                     <action selector="play" destination="BYZ-38-t0r" eventType="touchUpInside" id="oc1-Mw-wdB"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1l-hK-wmE" userLabel="programLabel">
-                                <rect key="frame" x="139" y="357" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uim-IL-8qn" userLabel="programLabel">
+                                <rect key="frame" x="139" y="319" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" restorationIdentifier="siteLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igt-ot-XMW" userLabel="siteLabel">
+                                <rect key="frame" x="139" y="510" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -33,15 +39,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1sW-ch-62K" firstAttribute="top" secondItem="J1l-hK-wmE" secondAttribute="bottom" constant="190" id="4OH-ne-kxm"/>
                             <constraint firstItem="YBW-a5-fY7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8KD-nK-UL9"/>
-                            <constraint firstItem="J1l-hK-wmE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xwi-uU-Rw6"/>
+                            <constraint firstItem="igt-ot-XMW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DOY-Cm-HzO"/>
+                            <constraint firstItem="igt-ot-XMW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="209.5" id="bf8-QU-kTG"/>
                             <constraint firstItem="YBW-a5-fY7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fY4-mZ-6Su"/>
+                            <constraint firstItem="igt-ot-XMW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yAt-Ue-pnG"/>
+                            <constraint firstItem="uim-IL-8qn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zjx-ic-iQv"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="programLabel" destination="uim-IL-8qn" id="8hB-s6-pbl"/>
+                        <outlet property="siteLabel" destination="igt-ot-XMW" id="7KK-tQ-cCY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

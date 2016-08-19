@@ -26,7 +26,7 @@
     _isPlaying = NO;
     
     NSURL *url = [NSURL URLWithString:@"http://213.177.106.78:8002"];
-    NSURL *scheduleUrl = [NSURL URLWithString:@"http://obrazschedule.ru/schedule/?action=get_schedule"];
+    //NSURL *scheduleUrl = [NSURL URLWithString:@"http://obrazschedule.ru/schedule/?action=get_schedule"];
     self.programs = [NSMutableArray array];
     
     self.playerItem = [AVPlayerItem playerItemWithURL:url];
@@ -49,6 +49,31 @@
     NSDateComponents *components = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
     NSInteger hour = [components hour];
     NSInteger minute = [components minute];
+    
+    NSMutableArray *n = self.programs;
+    for(int i = 0; i < [self.programs count]; i++) {
+        Program *p = [self.programs objectAtIndex:i];
+        
+        NSLog(@"i = %d", i);
+        int currentTime = hour*60 + minute;
+        
+        int prTime = p.hours*60 + p.minutes;
+        
+        if (prTime > currentTime) {
+            self.programLabel.text = p.programName;
+            NSLog(@"%@", p.programName);
+            break;
+        }
+        
+        if ((currentTime > prTime) && (i == ([self.programs count] - 1))) {
+            self.programLabel.text = p.programName;
+            NSLog(@"%@", p.programName);
+            break;
+        }
+    }
+    
+    //self.programLabel.text = @"asdasdas";
+    
     NSLog(@"Yes!!!");
 }
 
