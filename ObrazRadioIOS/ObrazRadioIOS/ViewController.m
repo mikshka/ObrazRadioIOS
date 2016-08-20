@@ -50,7 +50,7 @@
     NSInteger hour = [components hour];
     NSInteger minute = [components minute];
     
-    NSMutableArray *n = self.programs;
+   // NSMutableArray *n = self.programs;
     for(int i = 0; i < [self.programs count]; i++) {
         Program *p = [self.programs objectAtIndex:i];
         
@@ -95,6 +95,8 @@
         _isPlaying = NO;
     }
 }
+
+
 
 + (NSMutableDictionary *)jsonRequestWithURL:(NSString *)url
 {
@@ -205,5 +207,9 @@
     }
     
 }
+- (IBAction) goToUrl {
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://radioobraz.ru/"]];
+}
+
 
 @end

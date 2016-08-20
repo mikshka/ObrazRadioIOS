@@ -20,7 +20,7 @@
 @property (strong, nonatomic) AVPlayer *player;
 @property (strong, nonatomic) NSMutableArray *programs;
 @property (nonatomic, retain) IBOutlet UILabel *programLabel;
-@property (nonatomic, retain) IBOutlet UILabel *siteLabel;
+@property (nonatomic, retain) IBOutlet UIButton *siteButton;
 
 
 @property(nonatomic) bool isPlaying;
@@ -31,6 +31,6 @@
 - (void)simpleJsonParsing;
 - (void) parseJson;
 - (void) loadTodayProgram;
-
+- (IBAction) goToUrl;
 @end
 
