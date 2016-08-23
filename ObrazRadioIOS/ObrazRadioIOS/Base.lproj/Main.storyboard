@@ -17,34 +17,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uim-IL-8qn" userLabel="programLabel">
-                                <rect key="frame" x="139" y="319" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBW-a5-fY7">
-                                <rect key="frame" x="136" y="265" width="49" height="38"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="play" destination="BYZ-38-t0r" eventType="touchUpInside" id="oc1-Mw-wdB"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JU-GZ-n21">
-                                <rect key="frame" x="0.0" y="514" width="320" height="46"/>
-                                <state key="normal" image="im_site"/>
+                                <rect key="frame" x="16" y="531" width="288" height="29"/>
+                                <state key="normal" image="im_site_test">
+                                    <color key="titleColor" red="0.8424586162899641" green="1" blue="0.66148809088799887" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="goToUrl" destination="BYZ-38-t0r" eventType="touchUpInside" id="viB-t4-tlk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkO-tr-413">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
+                                <state key="normal" image="bt_play"/>
+                                <connections>
+                                    <action selector="play" destination="BYZ-38-t0r" eventType="touchUpInside" id="DKQ-Vi-bHU"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cqn-1A-NMF">
+                                <rect key="frame" x="139" y="353" width="42" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uim-IL-8qn" userLabel="programLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YBW-a5-fY7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8KD-nK-UL9"/>
+                            <constraint firstItem="kkO-tr-413" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="33C-Sp-u6Z"/>
+                            <constraint firstItem="kkO-tr-413" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HAa-7q-MYI"/>
                             <constraint firstItem="1sW-ch-62K" firstAttribute="top" secondItem="8JU-GZ-n21" secondAttribute="bottom" constant="8" id="MOq-Fz-evn"/>
                             <constraint firstItem="8JU-GZ-n21" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N6n-s7-dwe"/>
-                            <constraint firstItem="YBW-a5-fY7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fY4-mZ-6Su"/>
-                            <constraint firstItem="uim-IL-8qn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zjx-ic-iQv"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -61,6 +67,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="im_site" width="200" height="26"/>
+        <image name="bt_play" width="100" height="100"/>
+        <image name="im_site_test" width="150" height="19"/>
     </resources>
 </document>

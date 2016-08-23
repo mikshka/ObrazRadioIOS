@@ -97,21 +97,24 @@ static sqlite3_stmt *statement = nil;
     {
         NSString *querySQL = @"SELECT sc_date, programName, programTime FROM schedule where sc_date = date('now')";
         const char *query_stmt = [querySQL UTF8String];
-        NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+        //NSMutableArray *resultArray = [[NSMutableArray alloc]init];
+        NSMutableArray *programs = [NSMutableArray array];
         if (sqlite3_prepare_v2(database, query_stmt, -1, &statement, NULL) == SQLITE_OK)
         {
             while (sqlite3_step(statement) == SQLITE_ROW)
             {
                 NSDate* today = [NSDate date];
-                
-                NSMutableArray *programs = [NSMutableArray array];
-                
+              
                 Program *curProgram = [[Program alloc] init];
                 curProgram.programDate = today;
                 curProgram.programName = [[NSString alloc] initWithUTF8String:
-                                  (const char *) sqlite3_column_text(statement, 0)];
+                                  (const char *) sqlite3_column_text(statement, 1)];
                 curProgram.programTime = [[NSString alloc] initWithUTF8String:
-                                        (const char *) sqlite3_column_text(statement, 1)];
+                                        (const char *) sqlite3_column_text(statement, 2)];
+                
+                NSArray* time = [curProgram.programTime componentsSeparatedByString: @":"];
+                curProgram.hours = [[time objectAtIndex: 0] intValue];
+                curProgram.minutes = [[time objectAtIndex: 1] intValue];
                 
                 
                 [programs addObject:curProgram];
@@ -119,7 +122,7 @@ static sqlite3_stmt *statement = nil;
             }
             sqlite3_finalize(statement);
             sqlite3_close(database);
-            return resultArray;
+            return programs;
             
         }
     } else {

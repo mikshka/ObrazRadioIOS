@@ -49,8 +49,7 @@
     NSDateComponents *components = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:date];
     NSInteger hour = [components hour];
     NSInteger minute = [components minute];
-    
-   // NSMutableArray *n = self.programs;
+ 
     for(int i = 0; i < [self.programs count]; i++) {
         Program *p = [self.programs objectAtIndex:i];
         
@@ -60,7 +59,8 @@
         int prTime = p.hours*60 + p.minutes;
         
         if (prTime > currentTime) {
-            self.programLabel.text = p.programName;
+            Program *p2 = [self.programs objectAtIndex:i-1];
+            self.programLabel.text = p2.programName;
             NSLog(@"%@", p.programName);
             break;
         }
