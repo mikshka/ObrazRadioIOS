@@ -19,8 +19,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8JU-GZ-n21">
                                 <rect key="frame" x="16" y="531" width="288" height="29"/>
-                                <state key="normal" image="im_site_test">
-                                    <color key="titleColor" red="0.8424586162899641" green="1" blue="0.66148809088799887" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="radioobraz.ru">
+                                    <color key="titleColor" red="0.21568627450980393" green="0.29411764705882354" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="goToUrl" destination="BYZ-38-t0r" eventType="touchUpInside" id="viB-t4-tlk"/>
@@ -30,34 +31,27 @@
                                 <rect key="frame" x="110" y="234" width="100" height="100"/>
                                 <state key="normal" image="bt_play"/>
                                 <connections>
-                                    <action selector="play" destination="BYZ-38-t0r" eventType="touchUpInside" id="DKQ-Vi-bHU"/>
+                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fCD-0J-Hq4"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cqn-1A-NMF">
-                                <rect key="frame" x="139" y="353" width="42" height="21"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uim-IL-8qn" userLabel="programLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DdU-dN-zlZ">
+                                <rect key="frame" x="7" y="360" width="295" height="31"/>
+                            </slider>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="kkO-tr-413" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="33C-Sp-u6Z"/>
                             <constraint firstItem="kkO-tr-413" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HAa-7q-MYI"/>
                             <constraint firstItem="1sW-ch-62K" firstAttribute="top" secondItem="8JU-GZ-n21" secondAttribute="bottom" constant="8" id="MOq-Fz-evn"/>
                             <constraint firstItem="8JU-GZ-n21" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N6n-s7-dwe"/>
+                            <constraint firstItem="DdU-dN-zlZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ril-Ir-iHl"/>
+                            <constraint firstItem="DdU-dN-zlZ" firstAttribute="trailing" secondItem="8JU-GZ-n21" secondAttribute="trailing" id="sz6-Dd-RO8"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="programLabel" destination="uim-IL-8qn" id="8hB-s6-pbl"/>
                         <outlet property="siteButton" destination="8JU-GZ-n21" id="Hos-zR-pUo"/>
                     </connections>
                 </viewController>
@@ -68,6 +62,5 @@
     </scenes>
     <resources>
         <image name="bt_play" width="100" height="100"/>
-        <image name="im_site_test" width="150" height="19"/>
     </resources>
 </document>

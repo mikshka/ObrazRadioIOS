@@ -82,18 +82,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)play
+- (IBAction)play:(id)sender
 {
+    UIButton *theButton = (UIButton*)sender;
     if (_isPlaying == NO) {
     
         [self.player play];
+        [theButton setImage:[UIImage imageNamed:@"bt_stop.png"] forState:UIControlStateNormal];
         _isPlaying = YES;
         
     } else {
         
         [self.player pause];
+        [theButton setImage:[UIImage imageNamed:@"bt_play.png"] forState:UIControlStateNormal];
         _isPlaying = NO;
     }
+    
 }
 
 
