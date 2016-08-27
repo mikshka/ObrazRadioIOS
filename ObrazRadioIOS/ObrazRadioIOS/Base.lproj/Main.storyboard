@@ -36,33 +36,43 @@
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DdU-dN-zlZ">
                                 <rect key="frame" x="14" y="493" width="288" height="31"/>
+                                <connections>
+                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="KT1-zY-MXX"/>
+                                </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cft-fS-Iip" userLabel="PlayLabel">
-                                <rect key="frame" x="20" y="365" width="280" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cft-fS-Iip" userLabel="PlayLabel">
+                                <rect key="frame" x="9" y="365" width="300" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.21568627450980393" green="0.29411764705882354" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Сейчас в эфире" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-wV-Uuc">
-                                <rect key="frame" x="93" y="336" width="134" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Сейчас в эфире" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-wV-Uuc">
+                                <rect key="frame" x="94" y="329" width="129" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.21568627450980393" green="0.29411764705882354" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="FGl-TL-Lwd">
+                                <rect key="frame" x="38" y="20" width="240" height="128"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="KWf-m0-GwO">
+                                <rect key="frame" x="38" y="145" width="240" height="44"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="KWf-m0-GwO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2CR-OZ-7Ju"/>
                             <constraint firstItem="kkO-tr-413" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="33C-Sp-u6Z"/>
-                            <constraint firstItem="sBn-wV-Uuc" firstAttribute="top" secondItem="kkO-tr-413" secondAttribute="bottom" constant="2" id="9G6-uc-LXd"/>
                             <constraint firstItem="DdU-dN-zlZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AGn-dX-udE"/>
+                            <constraint firstItem="KWf-m0-GwO" firstAttribute="top" secondItem="FGl-TL-Lwd" secondAttribute="bottom" constant="-3" id="GMp-jD-6nU"/>
                             <constraint firstItem="kkO-tr-413" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HAa-7q-MYI"/>
                             <constraint firstItem="1sW-ch-62K" firstAttribute="top" secondItem="8JU-GZ-n21" secondAttribute="bottom" constant="4" id="MOq-Fz-evn"/>
                             <constraint firstItem="8JU-GZ-n21" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N6n-s7-dwe"/>
-                            <constraint firstItem="Cft-fS-Iip" firstAttribute="top" secondItem="sBn-wV-Uuc" secondAttribute="bottom" constant="8" id="Om4-2R-nUY"/>
-                            <constraint firstItem="sBn-wV-Uuc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VjX-9w-IiP"/>
+                            <constraint firstItem="FGl-TL-Lwd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X0s-3i-QY6"/>
                             <constraint firstItem="DdU-dN-zlZ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" constant="10" id="Xsb-iX-Wqa"/>
                             <constraint firstItem="1sW-ch-62K" firstAttribute="top" secondItem="DdU-dN-zlZ" secondAttribute="bottom" constant="44" id="bs6-qc-uj6"/>
                             <constraint firstItem="Cft-fS-Iip" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jUm-Vm-ua1"/>
+                            <constraint firstItem="sBn-wV-Uuc" firstAttribute="top" secondItem="kkO-tr-413" secondAttribute="bottom" constant="2" id="jdz-2x-Li0"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -71,6 +81,7 @@
                     <connections>
                         <outlet property="programLabel" destination="Cft-fS-Iip" id="Mym-lg-tk6"/>
                         <outlet property="siteButton" destination="8JU-GZ-n21" id="Hos-zR-pUo"/>
+                        <outlet property="slider" destination="DdU-dN-zlZ" id="dEJ-3O-wj2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -80,5 +91,7 @@
     </scenes>
     <resources>
         <image name="bt_play" width="100" height="100"/>
+        <image name="logo" width="300" height="146"/>
+        <image name="title" width="250" height="37"/>
     </resources>
 </document>

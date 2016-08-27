@@ -38,6 +38,7 @@
     SEL mySelector = @selector(myTimerCallback:);
     NSTimer* timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:mySelector userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    //self.slider.value = [self.player volume];
     
     
 }
@@ -214,6 +215,9 @@
 - (IBAction) goToUrl {
    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://radioobraz.ru/"]];
 }
-
+- (IBAction)sliderAction:(id)sender
+{
+    [self.player setVolume:self.slider.value];
+}
 
 @end

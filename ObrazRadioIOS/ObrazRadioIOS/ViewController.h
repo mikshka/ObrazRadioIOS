@@ -13,6 +13,7 @@
 #include <AudioToolbox/AudioServices.h>
 #import <AVFoundation/AVFoundation.h>
 #import "DBManager.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ViewController : UIViewController
 
@@ -21,7 +22,7 @@
 @property (strong, nonatomic) NSMutableArray *programs;
 @property (nonatomic, retain) IBOutlet UILabel *programLabel;
 @property (nonatomic, retain) IBOutlet UIButton *siteButton;
-
+@property (weak, nonatomic) IBOutlet UISlider *slider;
 
 @property(nonatomic) bool isPlaying;
 
@@ -32,5 +33,7 @@
 - (void) parseJson;
 - (void) loadTodayProgram;
 - (IBAction) goToUrl;
+- (IBAction)sliderAction:(id)sender;
+
 @end
 
