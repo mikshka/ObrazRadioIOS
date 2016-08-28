@@ -38,8 +38,10 @@
     SEL mySelector = @selector(myTimerCallback:);
     NSTimer* timer = [NSTimer timerWithTimeInterval:1.0f target:self selector:mySelector userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-    //self.slider.value = [self.player volume];
-    
+    float vol = [[AVAudioSession sharedInstance] outputVolume];
+    self.slider.value = vol;
+
+    //NSLog(@"volume = %f", vol);
     
 }
 
@@ -54,7 +56,7 @@
     for(int i = 0; i < [self.programs count]; i++) {
         Program *p = [self.programs objectAtIndex:i];
         
-        NSLog(@"i = %d", i);
+        //NSLog(@"i = %d", i);
         int currentTime = hour*60 + minute;
         
         int prTime = p.hours*60 + p.minutes;
@@ -62,20 +64,20 @@
         if (prTime > currentTime) {
             Program *p2 = [self.programs objectAtIndex:i-1];
             self.programLabel.text = p2.programName;
-            NSLog(@"%@", p.programName);
+            //NSLog(@"%@", p.programName);
             break;
         }
         
         if ((currentTime > prTime) && (i == ([self.programs count] - 1))) {
             self.programLabel.text = p.programName;
-            NSLog(@"%@", p.programName);
+            //NSLog(@"%@", p.programName);
             break;
         }
     }
     
     //self.programLabel.text = @"asdasdas";
     
-    NSLog(@"Yes!!!");
+    //NSLog(@"Yes!!!");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -218,6 +220,7 @@
 - (IBAction)sliderAction:(id)sender
 {
     [self.player setVolume:self.slider.value];
+   // NSLog(@" slider position = %f", self.slider.value);
 }
 
 @end
