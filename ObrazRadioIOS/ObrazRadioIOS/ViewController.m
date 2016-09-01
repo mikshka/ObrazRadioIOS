@@ -20,19 +20,62 @@
 
 @implementation ViewController
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.player pause];
+    [super viewWillDisappear:animated];
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    [self resignFirstResponder];
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+    switch (event.subtype) {
+        case UIEventSubtypeRemoteControlTogglePlayPause:
+            if([self.player rate] == 0){
+                [self.player play];
+            } else {
+                [self.player pause];
+            }
+            break;
+        case UIEventSubtypeRemoteControlPlay:
+            [self.player play];
+            break;
+        case UIEventSubtypeRemoteControlPause:
+            [self.player pause];
+            break;
+        default:
+            break;
+    }
+}
+- (void)applicationDidEnterBackground:(NSNotification *)notification
+{
+    [self.player performSelector:@selector(play) withObject:nil afterDelay:0.01];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _isPlaying = NO;
     
-    NSURL *url = [NSURL URLWithString:@"http://213.177.106.78:8002"];
+    
+    self.myUrl = [NSURL URLWithString:@"http://213.177.106.78:8002"];
     //NSURL *scheduleUrl = [NSURL URLWithString:@"http://obrazschedule.ru/schedule/?action=get_schedule"];
+    
+    
     self.programs = [NSMutableArray array];
     
-    self.playerItem = [AVPlayerItem playerItemWithURL:url];
+    self.playerItem = [AVPlayerItem playerItemWithURL:self.myUrl];
     self.player = [AVPlayer playerWithPlayerItem: self.playerItem];
-    self.player = [AVPlayer playerWithURL:url];
+    self.player = [AVPlayer playerWithURL:self.myUrl];
     
+   
     [self loadTodayProgram];
     
     SEL mySelector = @selector(myTimerCallback:);
@@ -40,6 +83,7 @@
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     float vol = [[AVAudioSession sharedInstance] outputVolume];
     self.slider.value = vol;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
 
     //NSLog(@"volume = %f", vol);
     
@@ -63,7 +107,13 @@
         
         if (prTime > currentTime) {
             Program *p2 = [self.programs objectAtIndex:i-1];
+            //self.programLabel.selectable = YES;
+            NSAttributedString* s2 = [[NSAttributedString alloc] initWithString:p.programName];
+           
             self.programLabel.text = p2.programName;
+           // self.programLabel.editable = YES;
+            //self.programLabel.attributedText = s2;
+           // self.programLabel.editable = NO;
             //NSLog(@"%@", p.programName);
             break;
         }
@@ -97,6 +147,7 @@
     } else {
         
         [self.player pause];
+      
         [theButton setImage:[UIImage imageNamed:@"bt_play.png"] forState:UIControlStateNormal];
         _isPlaying = NO;
     }
@@ -129,7 +180,7 @@
     if (response != nil) {
         //-- JSON Parsing
         NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
-        //NSLog(@"Result = %@",result);
+        NSLog(@"Result = %@",result);
         
         
         
@@ -185,6 +236,7 @@
         [self simpleJsonParsing];
         
     });
+    //[self simpleJsonParsing];
 
 }
 - (void) loadTodayProgram {
@@ -219,8 +271,32 @@
 }
 - (IBAction)sliderAction:(id)sender
 {
-    [self.player setVolume:self.slider.value];
-   // NSLog(@" slider position = %f", self.slider.value);
+   // [self.player setVolume:self.slider.value];
+    
+    float val = self.slider.value;
+    NSString *version = [[UIDevice currentDevice] systemVersion];
+    float ver_float = [version floatValue];
+    if (ver_float >= 7.0) {
+        if (self.player) {
+            self.player.volume = val;
+        }
+    }
+    //self.radioPlayer.volume = self.slider.value;
+    /*
+    NSLog(@" slider position = %f", val);
+    NSMutableArray *allAudioParams = [NSMutableArray array];
+    for (AVAssetTrack *track in self.audioTracks) {
+        AVMutableAudioMixInputParameters *audioInputParams =
+        [AVMutableAudioMixInputParameters audioMixInputParameters];
+        [audioInputParams setVolume:val atTime:kCMTimeZero];
+        [audioInputParams setTrackID:[track trackID]];
+        [allAudioParams addObject:audioInputParams];
+    }
+    AVMutableAudioMix *audioMix = [AVMutableAudioMix audioMix];
+    [audioMix setInputParameters:allAudioParams];
+    
+    [self.playerItem setAudioMix:audioMix];
+     */
 }
 
 @end

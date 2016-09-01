@@ -47,11 +47,8 @@
                                 <color key="textColor" red="0.21568627450980393" green="0.29411764705882354" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="FGl-TL-Lwd">
-                                <rect key="frame" x="50" y="28" width="217" height="114"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="KWf-m0-GwO">
-                                <rect key="frame" x="62" y="145" width="211" height="33"/>
+                                <rect key="frame" x="62" y="145" width="211" height="29"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UhS-sU-bnx">
                                 <rect key="frame" x="20" y="358" width="280" height="74"/>
@@ -61,6 +58,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="FGl-TL-Lwd">
+                                <rect key="frame" x="52" y="28" width="217" height="114"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -69,17 +69,17 @@
                             <constraint firstItem="8JU-GZ-n21" firstAttribute="top" secondItem="DdU-dN-zlZ" secondAttribute="bottom" constant="8" id="6OH-MB-Fwv"/>
                             <constraint firstItem="sBn-wV-Uuc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6pH-tE-slU"/>
                             <constraint firstItem="DdU-dN-zlZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AGn-dX-udE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UhS-sU-bnx" secondAttribute="trailing" constant="5" id="AVv-mm-Pp1"/>
                             <constraint firstItem="kkO-tr-413" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HAa-7q-MYI"/>
                             <constraint firstItem="UhS-sU-bnx" firstAttribute="top" secondItem="sBn-wV-Uuc" secondAttribute="bottom" constant="3" id="JjR-wJ-RSZ"/>
+                            <constraint firstItem="FGl-TL-Lwd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KSa-Us-Eyr"/>
                             <constraint firstItem="1sW-ch-62K" firstAttribute="top" secondItem="8JU-GZ-n21" secondAttribute="bottom" constant="4" id="MOq-Fz-evn"/>
                             <constraint firstItem="DdU-dN-zlZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="Mrv-Tb-2Gb"/>
                             <constraint firstItem="8JU-GZ-n21" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N6n-s7-dwe"/>
                             <constraint firstItem="UhS-sU-bnx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SpO-gb-05g"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DdU-dN-zlZ" secondAttribute="trailing" id="TOv-hK-mxW"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="UhS-sU-bnx" secondAttribute="leading" constant="5" id="Vvx-jD-iqh"/>
-                            <constraint firstItem="FGl-TL-Lwd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X0s-3i-QY6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DdU-dN-zlZ" secondAttribute="trailing" constant="5" id="TOv-hK-mxW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UhS-sU-bnx" secondAttribute="trailing" constant="5" id="VUR-ZM-2Qa"/>
                             <constraint firstItem="KWf-m0-GwO" firstAttribute="top" secondItem="FGl-TL-Lwd" secondAttribute="bottom" constant="2" id="brE-gq-4zn"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="UhS-sU-bnx" secondAttribute="leading" constant="5" id="cXA-5W-NpL"/>
                             <constraint firstItem="sBn-wV-Uuc" firstAttribute="top" secondItem="kkO-tr-413" secondAttribute="bottom" constant="5" id="jdz-2x-Li0"/>
                         </constraints>
                     </view>
@@ -89,7 +89,7 @@
                     <connections>
                         <outlet property="programLabel" destination="UhS-sU-bnx" id="Ebh-Yk-oGV"/>
                         <outlet property="siteButton" destination="8JU-GZ-n21" id="Hos-zR-pUo"/>
-                        <outlet property="slider" destination="DdU-dN-zlZ" id="dEJ-3O-wj2"/>
+                        <outlet property="slider" destination="DdU-dN-zlZ" id="f6V-bN-QN6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

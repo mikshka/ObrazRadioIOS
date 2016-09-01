@@ -19,7 +19,9 @@
 
 @property (strong, nonatomic) AVPlayerItem *playerItem;
 @property (strong, nonatomic) AVPlayer *player;
+@property (strong, nonatomic) NSURL *myUrl;
 @property (strong, nonatomic) NSMutableArray *programs;
+@property (strong, nonatomic) NSArray *audioTracks;
 @property (nonatomic, retain) IBOutlet UITextView *programLabel;
 @property (nonatomic, retain) IBOutlet UIButton *siteButton;
 @property (weak, nonatomic) IBOutlet UISlider *slider;
