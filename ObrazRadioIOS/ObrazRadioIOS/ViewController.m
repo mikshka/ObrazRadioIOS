@@ -180,7 +180,7 @@
     if (response != nil) {
         //-- JSON Parsing
         NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:nil];
-        NSLog(@"Result = %@",result);
+      //  NSLog(@"Result = %@",result);
         
         
         
@@ -208,17 +208,6 @@
             curProgram.programTime = [NSString stringWithFormat:@"%d:%d", curProgram.hours, curProgram.minutes];
             
             [self.programs addObject:curProgram];
-            
-            
-            if (pDate)
-            {
-                //NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
-                //dic[@"array"] = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            }
-            else
-            {
-                NSLog(@"Error in url response");
-            }
             
         }
         [[DBManager getSharedInstance]saveData: self.programs];
