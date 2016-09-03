@@ -56,7 +56,9 @@
 }
 - (void)applicationDidEnterBackground:(NSNotification *)notification
 {
-    [self.player performSelector:@selector(play) withObject:nil afterDelay:0.01];
+    if (_isPlaying) {
+        [self.player performSelector:@selector(play) withObject:nil afterDelay:0.01];
+    }
 }
 
 - (void)viewDidLoad {
