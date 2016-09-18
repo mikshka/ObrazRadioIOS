@@ -87,7 +87,7 @@ static sqlite3_stmt *statement = nil;
         sqlite3_finalize(statement);
         sqlite3_close(database);
     }
-    return NO;
+    return nil;
 }
 
 - (NSMutableArray*) getTodayProgram

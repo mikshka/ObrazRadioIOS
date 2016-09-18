@@ -126,7 +126,7 @@
         if (prTime > currentTime) {
             Program *p2 = [self.programs objectAtIndex:i-1];
             //self.programLabel.selectable = YES;
-            NSAttributedString* s2 = [[NSAttributedString alloc] initWithString:p.programName];
+           // NSAttributedString* s2 = [[NSAttributedString alloc] initWithString:p.programName];
            
             self.programLabel.text = p2.programName;
            // self.programLabel.editable = YES;
